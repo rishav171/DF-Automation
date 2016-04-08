@@ -1,0 +1,6 @@
+29/02/2016 11:52:13.353 - [INFO] - org.openqa.selenium.UnhandledAlertException: Modal dialog present: Do you want to release the selected Tasks?
+Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
+System info: host: 'C909070E15590B', ip: '172.19.77.234', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{nativeEvents=true, browserName=internet explorer, takesScreenshot=true, javascriptEnabled=true, handlesAlerts=true, version=11, cssSelectorsEnabled=true, platform=WINDOWS}]
+Session ID: 505c88bd-8e11-4195-8410-d160357e92ba

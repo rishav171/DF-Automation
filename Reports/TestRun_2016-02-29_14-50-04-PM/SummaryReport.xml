@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><TestCases>
+<TestCase>
+<Name>Search for PO keyword</Name>
+<Status>FAIL</Status>
+<Browser>IE 11</Browser>
+<Priority>Priority1</Priority>
+<TimeTaken>00:02:54</TimeTaken>
+<StepsPassed>2</StepsPassed>
+<StepsFailed>3</StepsFailed>
+<ALMTCName>Search for PO keyword</ALMTCName>
+<QCSuite/>
+<ReportFolderName>Search for PO keyword</ReportFolderName>
+<HTMLReportName>Search_for_PO_keyword_2016-02-29_14-52-59-PM.html</HTMLReportName>
+</TestCase>
+</TestCases>

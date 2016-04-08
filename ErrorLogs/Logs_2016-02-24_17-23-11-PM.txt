@@ -1,0 +1,10 @@
+24/02/2016 05:23:11.746 - [INFO] - org.openqa.selenium.UnhandledAlertException: Modal dialog present: Do you want to release the selected Tasks?
+Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
+System info: host: 'C909070E15590B', ip: '172.22.39.47', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{nativeEvents=true, browserName=internet explorer, takesScreenshot=true, javascriptEnabled=true, handlesAlerts=true, version=11, cssSelectorsEnabled=true, platform=WINDOWS}]
+Session ID: 2147a12b-2fb6-4568-9b70-3b222394d7e3
+24/02/2016 10:38:32.765 - [INFO] - org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
+System info: host: 'C909070E15590B', ip: '127.0.0.1', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: driver.version: RemoteWebDriver
