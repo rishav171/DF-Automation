@@ -53,7 +53,9 @@ public class DFSinglesPackingStation  extends PageBase < DFSinglesPackingStation
 	 * @return
 	 * @throws Exception
 	 */
-	public void SinglesPacking_Stat(String PackStationNum, String ToteNbr, String ItemNbr) throws Throwable {
+	
+	
+	public void Clicks_on_SinglesPackingStation_Link(String PackStationNum) throws Throwable {
         wh.waitForPageLoaded();
         wh.waitForElementPresent(lnkMenuOption);
         expectedResult = wh.isElementPresent(lnkMenuOption);
@@ -78,6 +80,11 @@ public class DFSinglesPackingStation  extends PageBase < DFSinglesPackingStation
         if (expectedResult) {
             wh.clickElement(btnsubmitButton);
         }
+	
+	}
+	
+	public void SinglesPacking_Stat(String ToteNbr, String ItemNbr) throws Throwable {
+       
         wh.waitForPageLoaded();
         expectedResult = wh.isElementPresent(inputToteNbr);
         if (expectedResult) {

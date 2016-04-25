@@ -39,15 +39,24 @@ public class DFCheckInPage  extends PageBase<DFCheckInPage>   {
 	
    public  void DFCheckInNavigation() throws Exception {		
 			wh.waitForPageLoaded();
-			wh.waitForElementPresent(lnkMenu);
-			wh.clickElement(lnkMenu);	
+			wh.waitForElementPresent(lnkMenu);			
+			expectedResult = wh.isElementPresent(lnkMenu);
+	        if (expectedResult) {
+	            wh.clickElement(lnkMenu);
+	        }
 			wh.waitForPageLoaded();
 			wh.waitForElementPresent(lnkCheckIn);
-			wh.clickElement(lnkCheckIn);	
+			expectedResult = wh.isElementPresent(lnkCheckIn);
+	        if (expectedResult) {
+	            wh.clickElement(lnkCheckIn);
+	        }			
 			wh.waitForPageLoaded();
 			wh.waitForElementPresent(inputApptmtId);
 			wh.sendKeys(inputApptmtId, AppointmentID);
-			wh.clickElement(btnApply);
+			expectedResult = wh.isElementPresent(btnApply);
+	        if (expectedResult) {
+	            wh.clickElement(btnApply);
+	        }			
 			wh.waitForPageLoaded();
 			report.addReportStep("Appointment Page, AppointmentID Details",
 					"Appointment Page, AppointmentID Details", 
@@ -55,12 +64,22 @@ public class DFCheckInPage  extends PageBase<DFCheckInPage>   {
 				}
 
    public  void DF_CheckIn_Fill_Details(String Fname,String Lname,String LicenseNumber,String Carrier,String Statelist,String DockDoor) throws Exception {	
-			wh.waitForElementPresent(chckBoxCheckIn);		
-			wh.clickElement(chckBoxCheckIn);
-			wh.clickElement(btnCheckIn);
+			wh.waitForElementPresent(chckBoxCheckIn);
+			expectedResult = wh.isElementPresent(chckBoxCheckIn);
+	        if (expectedResult) {
+	            wh.clickElement(chckBoxCheckIn);
+	        }
+	        wh.waitForElementPresent(btnCheckIn);
+			expectedResult = wh.isElementPresent(btnCheckIn);
+	        if (expectedResult) {
+	            wh.clickElement(btnCheckIn);
+	        }						
 			wh.waitForPageLoaded();
-			wh.waitForElementPresent(btnDriverName);		
-			wh.clickElement(btnDriverName);
+			wh.waitForElementPresent(btnDriverName);
+			expectedResult = wh.isElementPresent(btnDriverName);
+	        if (expectedResult) {
+	            wh.clickElement(btnDriverName);
+	        }			
 			wh.waitForPageLoaded();
 			wh.waitForElementPresent(inputFname);		
 			wh.sendKeys(inputFname, Fname);
@@ -71,10 +90,17 @@ public class DFCheckInPage  extends PageBase<DFCheckInPage>   {
 			report.addReportStep("Appointment Page, Driver Details",
 					"Appointment Page, Driver Details", 
 					StepResult.DONE);
-			wh.clickElement(btnCreate);
+			
+			expectedResult = wh.isElementPresent(btnCreate);
+	        if (expectedResult) {
+	        	wh.clickElement(btnCreate);
+	        }
 			wh.waitForPageLoaded();
-			wh.waitForElementPresent(chckBoxAppmntList);		
-			wh.clickElement(chckBoxAppmntList);
+			wh.waitForElementPresent(chckBoxAppmntList);	
+			expectedResult = wh.isElementPresent(chckBoxAppmntList);
+	        if (expectedResult) {
+	        	wh.clickElement(chckBoxAppmntList);
+	        }			
 			wh.waitForPageLoaded();
 			wh.waitForElementPresent(inputtrailerV);		
 			Random rand = new Random();
@@ -86,8 +112,11 @@ public class DFCheckInPage  extends PageBase<DFCheckInPage>   {
 			wh.sendKeys(inputCurrLocation, DockDoor);
 			wh.selectValue(listtrailerCondition, "Good");
 			wh.waitForPageLoaded();
-			wh.waitForElementPresent(chckBoxTrailerList);		
-			wh.clickElement(chckBoxTrailerList);
+			wh.waitForElementPresent(chckBoxTrailerList);					
+			expectedResult = wh.isElementPresent(chckBoxTrailerList);
+	        if (expectedResult) {
+	        	wh.clickElement(chckBoxTrailerList);
+	        }
 			report.addReportStep("Appointment Page, Trailer Details",
 					"Appointment Page, Trailer Details", 
 					StepResult.DONE);

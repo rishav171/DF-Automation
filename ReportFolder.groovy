@@ -1,6 +1,6 @@
 import jenkins.model.*;
 import hudson.model.*;
-def folderName = "TestRun_2016-04-07_14-33-12-PM";
+def folderName = "TestRun_2016-04-25_14-17-26-PM";
 def pa = new ParametersAction([
 new StringParameterValue("FOLDERNAME_QA_JOB", folderName)
 ])

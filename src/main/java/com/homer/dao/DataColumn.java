@@ -72,6 +72,19 @@ public class DataColumn {
 	public static final String PO_Remain_Qty1 ="PO_Remain_Qty1";
 	public static final String PO_Received_Qty1 ="PO_Received_Qty1";									
 	
+	
+	public static final String PackStationNum ="PackStationNum";
+	public static final String ToteNbr ="ToteNbr";
+	public static final String OBItemNbr ="OBItemNbr";
+	public static final String DistrOrder ="DistrOrder";
+	public static final String DistrOrderStatus ="DistrOrderStatus";
+	public static final String WavenumberStatus ="WavenumberStatus";
+	public static final String LPNFacility_Status ="LPNFacility_Status";
+	public static final String Item ="Item";
+	public static final String 	TestCaseName ="TestCaseName";
+	
+
+	
 	public static String Keyword = "Keyword";
 	public static String SKU = "SKU";
 	public static String FlyoutCat = "FlyoutCat";

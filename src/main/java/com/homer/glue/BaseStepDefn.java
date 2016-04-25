@@ -7,13 +7,20 @@ import com.homer.dao.DataClass;
 import com.homer.dao.InstanceContainer;
 import com.homer.helper.DataTable;
 import com.homer.po.DFActivityTrackingPage;
+import com.homer.po.DFAllocationPage;
 import com.homer.po.DFAsnVerification;
+import com.homer.po.DFHOSPITALPackingStation;
+import com.homer.po.DFMULTISPackingStation;
 import com.homer.po.DFMobilePackingStation;
+import com.homer.po.DFPickLocation;
 import com.homer.po.DFPixTransactionsPage;
 import com.homer.po.DFPurchaseOrderUIPage;
+import com.homer.po.DFRF_PuttyScreen;
 import com.homer.po.DFReleaseDockDoor;
+import com.homer.po.DFReserveLocations;
 import com.homer.po.DFSinglesPackingStation;
 import com.homer.po.DFiLPNsPage;
+import com.homer.po.DFoLPNsPage;
 import com.homer.po.HomePage;
 import com.homer.po.DFLoginPage;
 import com.homer.po.DFAsnCreation;
@@ -52,6 +59,16 @@ public class BaseStepDefn {
 	protected DFPostMessage PostMessage ;
 	protected DFSinglesPackingStation SinglesPackingStation ;
 	protected DFMobilePackingStation MobilePackingStation ;
+	protected DFMULTISPackingStation MULTISPackingStation ;
+	protected DFHOSPITALPackingStation HOSPITALPackingStation ;
+	protected DFoLPNsPage oLPNsPage ;
+	protected DFAllocationPage AllocationPage;
+	protected DFPickLocation PickLocationPage;
+	protected DFReserveLocations ReserveLocations;
+	protected DFRF_PuttyScreen RF_PuttyScreen;
+	
+	
+	
 	
 	
 	
@@ -86,6 +103,13 @@ public class BaseStepDefn {
 		PostMessage=new DFPostMessage(ic);
 		SinglesPackingStation=new DFSinglesPackingStation(ic);
 		MobilePackingStation=new DFMobilePackingStation(ic);
+		MULTISPackingStation=new DFMULTISPackingStation(ic);
+		HOSPITALPackingStation=new DFHOSPITALPackingStation(ic);
+		oLPNsPage=new DFoLPNsPage(ic);
+		AllocationPage=new DFAllocationPage(ic);
+		PickLocationPage=new DFPickLocation(ic);
+		ReserveLocations=new DFReserveLocations(ic);
+		RF_PuttyScreen=new DFRF_PuttyScreen(ic);
 		 
 	}
 	

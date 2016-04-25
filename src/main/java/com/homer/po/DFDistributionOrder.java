@@ -19,7 +19,7 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
     static final By chckBoxDistOrder = By.id("checkAll_c0_dataForm:DOList_entityListView:DOList_MainListTable");
     static final By btnMore = By.id("j_id142moreButton");
     static final By btnWave = By.id("DO_List_Wave_Order_button");
-    static final By chckBoxWaveParam = By.id("checkAll_c12_dataForm:listView:dataTable");
+    static final By chckBoxWaveParam = By.id("checkAll_c4_dataForm:listView:dataTable");
     static final By btnRunWave = By.id("rmButton_1RunWave1_100679000");
     static final By btnSubmit = By.id("rmButton_1SubmitWave1_100215000");
     static final By lblWaveNumber = By.id("dataForm:AwvNbrRun");
@@ -50,8 +50,11 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
     static final By chckBoxSec02 = By.id("dataForm:PutPack_ChckBox_Sec02");
     static final By inputoLPNNbr1 = By.id("dataForm:PutPack_INP_oLPNNbr1");
     static final By webtableDistOrder = By.xpath("//table[@id='dataForm:DODetailsLpnList_lv:LPNListTable_body']/tbody/tr");
+    
+    
 
-    String WaveNumber, TaskMessage;
+    String Wave_Number,TaskMessage;
+    
     String TaskID;
     public static boolean blnflag = false;
 
@@ -60,6 +63,59 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
     public DFDistributionOrder(InstanceContainer ic) {
         super(ic);
         // TODO Auto-generated constructor stub
+    }
+    
+    
+    
+    /**
+	 * Method to fill payment page details
+	 * @return
+	 * @throws Exception
+	 */
+ 
+    
+    public String[] iLpns_DistributionOrder(String DistrOrder) throws Throwable {    	
+        wh.waitForPageLoaded();
+        wh.waitForElementPresent(lnkMenuOption);
+        expectedResult = wh.isElementPresent(lnkMenuOption);
+        if (expectedResult) {
+            wh.clickElement(lnkMenuOption);
+        }
+        wh.waitForPageLoaded();
+        expectedResult = wh.isElementPresent(lnkDistribution);
+        if (expectedResult) {
+            wh.clickElement(lnkDistribution);
+        }
+        wh.waitForPageLoaded();
+        wh.waitForElementPresent(inputDistributionOrderID);
+        expectedResult = wh.isElementPresent(inputDistributionOrderID);
+        if (expectedResult) {
+            wh.sendKeys(inputDistributionOrderID, DistrOrder);
+            wh.clickElement(btnApply);
+            wh.waitForPageLoaded();
+            wh.waitForElementPresent(chckBoxDistOrder);
+            wh.clickElement(chckBoxDistOrder);
+            wh.waitForPageLoaded();
+            wh.clickElement(btnView);
+            wh.waitForPageLoaded();
+        }
+        wh.waitForPageLoaded();
+        wh.waitForElementPresent(lnkLPNs);
+        expectedResult = wh.isElementPresent(lnkLPNs);
+        if (expectedResult) {
+            wh.clickElement(lnkLPNs);
+        }
+        wh.waitForPageLoaded();
+        wh.waitForElementPresent(webtableDistOrder);                
+        int index=0;
+		 int rows=driver.findElements(webtableDistOrder).size();	
+		 String[] alternative = new String[rows-1];
+		 for(int rNum=1;rNum<=rows-1;rNum++){		   
+		   alternative[index]=driver.findElement(By.xpath("//table[@id='dataForm:DODetailsLpnList_lv:LPNListTable_body']/tbody/tr"+"["+rNum+"]/td[2]")).getText();
+		   System.out.println("Row is-> "+alternative[index]);
+		   index=index+1;
+		 }
+		return alternative;
     }
     
     /**
@@ -222,7 +278,7 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
 	 * @return
 	 * @throws Exception
 	 */
-    public void Wave_Verification(String DistrOrder, String WaveStatusData) throws Throwable {
+    public String Wave_Verification(String DistrOrder, String WaveStatusData) throws Throwable {
         wh.waitForPageLoaded();
         wh.waitForElementPresent(lnkMenu);
         expectedResult = wh.isElementPresent(lnkMenu);
@@ -295,7 +351,7 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
         wh.waitForElementPresent(lblWaveNumber);
         expectedResult = wh.isElementPresent(lblWaveNumber);
         if (expectedResult) {
-            WaveNumber = wh.getText(lblWaveNumber);
+            Wave_Number = wh.getText(lblWaveNumber);
             wh.clickElement(lblWaveNumber);
             wh.waitForPageLoaded();
             boolean done = true;
@@ -319,6 +375,7 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
             }
             wh.waitForPageLoaded();
         }
+        return Wave_Number;
     }
 
     /**
@@ -326,7 +383,7 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
 	 * @return
 	 * @throws Exception
 	 */
-    public void Release_Task() throws Throwable {
+    public String Release_Task() throws Throwable {
         wh.waitForElementPresent(btnMore1);
         expectedResult = wh.isElementPresent(btnMore1);
         if (expectedResult) {
@@ -378,5 +435,6 @@ public class DFDistributionOrder extends PageBase < DFDistributionOrder > {
                 "A confirmation dialogue Box with 'Yes' and 'No' Buttons",
                 StepResult.FAIL);
         }
+        return TaskID;
     }
 }

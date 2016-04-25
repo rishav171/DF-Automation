@@ -53,25 +53,21 @@ public class DFPostMessage  extends PageBase<DFPostMessage>  {
 	
 	
 	
-	public  String  DF_XmlUpdate(String Tag,String Val ,String xmlFilePath)
+	public  String  DF_XmlUpdate(String TagName,String TagName1,String Item,String xmlFilePath)
     {	
 		try {		
-			String[] TagName = Tag.split("-");
-	        String[] Tagal = Val.split("-");
+				        
 	        Random rand = new Random();
 			int trailer = rand.nextInt(1000);
 			String strtrailer = Integer.toString(trailer);
-	        Tagal[1]="Auto"+strtrailer;
-	        DistributionOrder=Tagal[1];
-	        Tagal[0]="Auto"+strtrailer+" 2016-02-15 15:42:49.967";
+	        DistributionOrder="Auto"+strtrailer;	        	        
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-			Document document = documentBuilder.parse(xmlFilePath);	
-            for(int i=0;i<TagName.length;i++)
-           {
-			Node Tagnode = document.getElementsByTagName(TagName[i]).item(0);			
-			Tagnode.setTextContent(Tagal[i]);	
-           }
+			Document document = documentBuilder.parse(xmlFilePath);	                       
+			Node Tagnode = document.getElementsByTagName(TagName).item(0);			
+			Tagnode.setTextContent(DistributionOrder);	       
+			Node Tagnode1 = document.getElementsByTagName(TagName1).item(0);			
+			Tagnode1.setTextContent(Item);	           			
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource domSource = new DOMSource(document);

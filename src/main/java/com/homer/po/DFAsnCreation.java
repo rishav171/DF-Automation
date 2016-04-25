@@ -48,16 +48,30 @@ public class DFAsnCreation extends PageBase<DFAsnCreation>  {
 	public  void AsnCreation() throws Exception {
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkMenu);
-		wh.clickElement(lnkMenu);	
+		expectedResult = wh.isElementPresent(lnkMenu);
+        if (expectedResult) {
+            wh.clickElement(lnkMenu);
+        }			
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkCreateASNMenu);
-		wh.clickElement(lnkCreateASNMenu);			
+		expectedResult = wh.isElementPresent(lnkCreateASNMenu);
+        if (expectedResult) {
+            wh.clickElement(lnkCreateASNMenu);
+        }
+					
 		wh.waitForPageLoaded();						
 		wh.waitForElementPresent(btnAdd);
-		wh.clickElement(btnAdd);
+		expectedResult = wh.isElementPresent(btnAdd);
+        if (expectedResult) {
+            wh.clickElement(btnAdd);
+        }		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(inputAsn);
-		wh.clickElement(btnGenAsn);
+		expectedResult = wh.isElementPresent(btnGenAsn);
+        if (expectedResult) {
+            wh.clickElement(btnGenAsn);
+        }
+		
 		ASNID=wh.getAttribute(inputAsn,"value");		
 		wh.sendKeydateVal(inputShippedDate);
 		report.addReportStep("Create ASN from PO, DF ASN Creation",
@@ -69,15 +83,25 @@ public class DFAsnCreation extends PageBase<DFAsnCreation>  {
 	
 	public  void DF_Assign_ASN_to_PO_Single_Item(String PoNumber,String ItemNumber1) throws Exception {
 		wh.waitForPageLoaded();		
-		wh.sendKeys(inputAsnTxtbox, ASNID);		
-		wh.clickElement(btnApply);	
+		wh.sendKeys(inputAsnTxtbox, ASNID);	
+		expectedResult = wh.isElementPresent(btnApply);
+        if (expectedResult) {
+            wh.clickElement(btnApply);
+        }
+			
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(inputPOTxtbox);
-		wh.sendKeys(inputPOTxtbox, PoNumber);		
-		wh.clickElement(btnPoApply);
+		wh.sendKeys(inputPOTxtbox, PoNumber);	
+		expectedResult = wh.isElementPresent(btnPoApply);
+        if (expectedResult) {
+            wh.clickElement(btnPoApply);
+        }		
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(btnPlusView);
-		wh.clickElement(btnPlusView);				
+		expectedResult = wh.isElementPresent(btnPlusView);
+        if (expectedResult) {
+            wh.clickElement(btnPlusView);
+        }						
 		wh.waitForElementPresent(chckBoxPo);
 		int rows=wh.getElementsCount(webtablePo);		                
         for(int rnum=1;rnum<=rows;rnum++){        	
@@ -99,12 +123,22 @@ public class DFAsnCreation extends PageBase<DFAsnCreation>  {
          }  		
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(btnAsnPlusView);
-		wh.clickElement(btnAsnPlusView);	
+		expectedResult = wh.isElementPresent(btnAsnPlusView);
+        if (expectedResult) {
+            wh.clickElement(btnAsnPlusView);
+        }
+			
 		wh.waitForElementPresent(chckBoxAsn);
-		wh.clickElement(chckBoxAsn);	
+		expectedResult = wh.isElementPresent(chckBoxAsn);
+        if (expectedResult) {
+            wh.clickElement(chckBoxAsn);
+        }			
 		wh.waitForPageLoaded();		            
 		wh.waitForElementPresent(btnArrow);
-		wh.clickElement(btnArrow);				
+		expectedResult = wh.isElementPresent(btnArrow);
+        if (expectedResult) {
+            wh.clickElement(btnArrow);
+        }						
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(QtyTxtbox1);
 		wh.sendKeys(QtyTxtbox1, "1");		
@@ -121,16 +155,25 @@ public class DFAsnCreation extends PageBase<DFAsnCreation>  {
 	
 	public  void Assign_ASN_to_PO_Multiple_Items(String PoNumber, String ItemNumber1, String ItemNumber2) throws Exception {
 		wh.waitForPageLoaded();		
-		wh.sendKeys(inputAsnTxtbox, ASNID);		
-		wh.clickElement(btnApply);	
+		wh.sendKeys(inputAsnTxtbox, ASNID);	
+		expectedResult = wh.isElementPresent(btnApply);
+        if (expectedResult) {
+            wh.clickElement(btnApply);
+        }			
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(inputPOTxtbox);
-		wh.sendKeys(inputPOTxtbox, PoNumber);		
-		wh.clickElement(btnPoApply);
+		wh.sendKeys(inputPOTxtbox, PoNumber);	
+		expectedResult = wh.isElementPresent(btnPoApply);
+        if (expectedResult) {
+            wh.clickElement(btnPoApply);
+        }		
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(btnPlusView);
-		wh.clickElement(btnPlusView);
-							
+		expectedResult = wh.isElementPresent(btnPlusView);
+        if (expectedResult) {
+            wh.clickElement(btnPlusView);
+        }
+									
 		wh.waitForElementPresent(chckBoxAsn);		
 		wh.waitForPageLoaded();		
 		int rows=wh.getElementsCount(webtablePo);		                
@@ -173,12 +216,22 @@ public class DFAsnCreation extends PageBase<DFAsnCreation>  {
         
         wh.waitForPageLoaded();		
 		wh.waitForElementPresent(btnAsnPlusView);
-		wh.clickElement(btnAsnPlusView);	
+		expectedResult = wh.isElementPresent(btnAsnPlusView);
+        if (expectedResult) {
+            wh.clickElement(btnAsnPlusView);
+        }
+			
 		wh.waitForElementPresent(chckBoxAsn);
-		wh.clickElement(chckBoxAsn);	
+		expectedResult = wh.isElementPresent(chckBoxAsn);
+        if (expectedResult) {
+            wh.clickElement(chckBoxAsn);
+        }			
 		wh.waitForPageLoaded();		            
 		wh.waitForElementPresent(btnArrow);
-		wh.clickElement(btnArrow);				
+		expectedResult = wh.isElementPresent(btnArrow);
+        if (expectedResult) {
+            wh.clickElement(btnArrow);
+        }					
 		wh.waitForPageLoaded();		
 		wh.waitForElementPresent(QtyTxtbox1);
 		wh.sendKeys(QtyTxtbox1, "1");	
@@ -191,8 +244,5 @@ public class DFAsnCreation extends PageBase<DFAsnCreation>  {
 		wh.clickElement(btnSave);	
 		wh.waitForPageLoaded();		
 	}
-	
-	
-	
-	
+				
 }

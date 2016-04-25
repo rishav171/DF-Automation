@@ -157,7 +157,9 @@ public class DriverFactory {
 		capabilities.setCapability(
 				CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION,
 				true);		
-		System.setProperty("webdriver.ie.driver", "C:\\IEDriverServer\\IEDriverServer.exe");        
+		
+		System.setProperty("webdriver.ie.driver", "C:\\IEDriverServer\\IEDriverServer.exe");     
+		//System.setProperty("webdriver.ie.driver", "C:\\WMS\\Homer_Release3.2\\Homer\\Drivers\\IEDriverServer.exe");
         DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
         caps.setCapability(
             InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,

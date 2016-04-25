@@ -8,9 +8,41 @@ Feature: This is a sample feature
   #  Step sentence is the 'cucumber' field value in TestRail,TestLink,ALM
 
    @PO_1
-  Scenario: TC_DF_AUTO_RELEASE_PW_007  	 
-  	 Given Run Wave for Distribution order  
+  Scenario: TC_SinglesPackingStation  	 
+     Given User Opens WMS application  	 
+  	 When  Update the DF Order XML File
+  	 Then  Post the XML File  	 
+  	 Then  Waving the Distribution Order  	 
+  	 Then  Release the Task
+     Then  Get BarCode from Location
+     Then  Picking the BarCode from PickLocation   
+     Then  Picking the BarCode from ReserveLocation       
+     Then  Performing the Picking in the RF Screens
+     When  User Clicks on SinglesPackingStation Link
+     Then  Submit the Print Shipping Label  
+     And   Checks the LPN Facility Status
      
-          
      
+     
+    @PO_1
+  Scenario: TC_MULTIPackingStation  	 
+  	 Given User Opens WMS application
+  	 When  Get iLpns from DistributionOrder
+     When  User Clicks on MULTIPackingStation Link
+     Then  Submit the MultiPrint Shipping Label  
+      And  Checks the MultiLPN Facility Status 
+   @PO_1
+  Scenario: TC_MobilePackingStation  	 
+  	 Given User Opens WMS application
+  	 When  Get iLpns from DistributionOrder
+     When  User Clicks on MobilePackingStation Link
+     Then  Submit the MobilePrint Shipping Label  
+      And  Checks the MobileLPN Facility Status 
+      @PO_1
+  Scenario: TC_HospitalPackingStation  	 
+  	 Given User Opens WMS application
+  	 When  Get iLpns from DistributionOrder     
+  	 When  User Clicks on HospitalPackingStation Link
+     Then  Submit the HospitalPrint Shipping Label  
+     And  Checks the HospitalLPN Facility Status 
    

@@ -20,6 +20,8 @@ public class DFLoginPage extends PageBase<DFLoginPage>  {
 	static final By imgHome  = By.name("home");
 	static final By lnkMenu  =By.id("phMenu");
 	static final By overlink  =By.id("overridelink");
+	static final By lnkSignOut = By.linkText("Sign Out");
+	static final By btnSignOutOk = By.name("SignoutOK");
 	
 	
 	public DFLoginPage(InstanceContainer ic) {
@@ -73,5 +75,24 @@ public class DFLoginPage extends PageBase<DFLoginPage>  {
             	}	
 		
 	      }
+	 
+	 public  void SignOutLink() throws Exception {
+		    wh.waitForPageLoaded();
+	        wh.waitForElementPresent(lnkSignOut);
+	        expectedResult = wh.isElementPresent(lnkSignOut);
+	        if (expectedResult) {
+	            wh.clickElement(lnkSignOut);
+		 
+	         }
+	        /*
+	        wh.waitForPageLoaded();
+	        wh.waitForElementPresent(btnSignOutOk);
+	        expectedResult = wh.isElementPresent(btnSignOutOk);
+	        if (expectedResult) {
+	            wh.clickElement(btnSignOutOk);
+		 
+	         }
+	         */
+	 }
 
 }

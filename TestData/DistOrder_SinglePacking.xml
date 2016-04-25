@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><tXML>
+<Header>
+<Source>Host</Source>
+<Action_Type>Create</Action_Type>
+<Message_Type>DistributionOrder</Message_Type>
+<Company_ID>1001</Company_ID>
+<Msg_Locale>English (United States)</Msg_Locale>
+<Msg_Time_Zone>America/New_York</Msg_Time_Zone>
+</Header>
+<Message>
+<DistributionOrder>
+<DistributionOrderId>Auto524</DistributionOrderId>
+<OrderType>Standard</OrderType>
+<OrderedDttm>09/09/15 23:59</OrderedDttm>
+<IsCancelled>false</IsCancelled>
+<BusinessUnit>1001</BusinessUnit>
+<BillingMethodCode>0</BillingMethodCode>
+<MustReleaseByDttm>09/09/15 23:59</MustReleaseByDttm>
+<ReferenceField1>COM</ReferenceField1>
+<ReferenceField2/>
+<ReferenceField3>Customer</ReferenceField3>
+<IncotermName>DDU</IncotermName>
+<BlockAutoCreateFlag>true</BlockAutoCreateFlag>
+<BlockAutoCreateFlag>true</BlockAutoCreateFlag>
+<BlockAutoConsolidateFlag>true</BlockAutoConsolidateFlag>
+<DesignatedModeCode>LTL</DesignatedModeCode>
+<ExternalSystemPurchaseOrderNbr>POAXJ11</ExternalSystemPurchaseOrderNbr>
+<SalesOrderNbr>POAXJ11</SalesOrderNbr>
+<FederatedStoreNbr>150</FederatedStoreNbr>
+<OriginFacilityAliasId>6007</OriginFacilityAliasId>
+<PickupStartDttm>09/09/15 08:45</PickupStartDttm>
+<PickupEndDttm>09/09/15 23:59</PickupEndDttm>
+<DestinationFacilityAliasId/>
+<DestinationAddressLine1>55, Trinity Awe SW #3450</DestinationAddressLine1>
+<DestinationAddressLine2>2nd Street</DestinationAddressLine2>
+<DestinationAddressLine3/>
+<DestinationCity>NEW YORK CITY</DestinationCity>
+<DestinationCountry>US</DestinationCountry>
+<DestinationStateOrProvince>NY</DestinationStateOrProvince>
+<DestinationPostalCode>10011</DestinationPostalCode>
+<DeliveryStartDttm>09/09/15 11:45</DeliveryStartDttm>
+<DeliveryEndDttm>02/17/16 23:59</DeliveryEndDttm>
+<DestinationContactName>John Tucker</DestinationContactName>
+<DestinationContactTelephoneNbr>6311319199</DestinationContactTelephoneNbr>
+<LpnCubingIndicator>84</LpnCubingIndicator>
+<PalletCubingIndicator>0</PalletCubingIndicator>
+<PrepackCubingIndicator>0</PrepackCubingIndicator>
+<BillToName>John Tucker</BillToName>
+<BillToAddressLine1>55, Trinity Awe SW #3450</BillToAddressLine1>
+<BillToAddressLine2>2nd Street</BillToAddressLine2>
+<BillToCity>NEW YORK CITY</BillToCity>
+<BillToCountryCode>US</BillToCountryCode>
+<BillToStateOrProv>NY</BillToStateOrProv>
+<BillToPostalCode>10011</BillToPostalCode>
+<RouteTo>2</RouteTo>
+<RouteType1>102</RouteType1>
+<DefaultLanguageCode>4</DefaultLanguageCode>
+<ARAcctNbr>808119</ARAcctNbr>
+<ARCode/>
+<DistributionOrderType>Customer Order</DistributionOrderType>
+<PartlShipConfFlag>True</PartlShipConfFlag>
+<TransportationPlanningOwner>WMS</TransportationPlanningOwner>
+<NbrOfShippingLabelsToPrint>1</NbrOfShippingLabelsToPrint>
+<ContentLabelType>01</ContentLabelType>
+<NbrOfContentLabelsToPrint>1</NbrOfContentLabelsToPrint>
+<BolType>1</BolType>
+<PrintCertificateOfOrigin/>
+<PrintCommercialInvoice/>
+<LineItem>
+<DoLineNbr>1</DoLineNbr>
+<ItemName>708277</ItemName>
+<DoLineStatus>Released</DoLineStatus>
+<IsCancelled>false</IsCancelled>
+<CommodityCode/>
+<SerialNbrRequiredIndicator>0</SerialNbrRequiredIndicator>
+<VasProcessType/>
+<WaveProcessingType>5</WaveProcessingType>
+<LpnType>PLT</LpnType>
+<LpnBreakAttribute>BA1</LpnBreakAttribute>
+<FulfillmentType>1</FulfillmentType>
+<Quantity>
+<OrderQty>1</OrderQty>
+<QtyUOM>EA</QtyUOM>
+</Quantity>
+</LineItem>
+</DistributionOrder>
+</Message>
+</tXML>

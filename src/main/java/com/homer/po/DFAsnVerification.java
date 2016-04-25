@@ -31,13 +31,23 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
 	public  void DF_Open_ASN_Verification() throws Exception {		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkMenu);
-		wh.clickElement(lnkMenu);	
+		expectedResult = wh.isElementPresent(lnkMenu);
+        if (expectedResult) {
+            wh.clickElement(lnkMenu);
+        }			
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkASNs);
-		wh.clickElement(lnkASNs);	
+		expectedResult = wh.isElementPresent(lnkASNs);
+        if (expectedResult) {
+            wh.clickElement(lnkASNs);
+        }			
 		wh.waitForPageLoaded();
 		wh.sendKeys(inputASNs, ASNID);
-		wh.clickElement(btnApply);
+		expectedResult = wh.isElementPresent(btnApply);
+        if (expectedResult) {
+            wh.clickElement(btnApply);
+        }
+		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(eleASNStatus);
 		ASNStatusIN=wh.getText(eleASNStatus);		
@@ -51,8 +61,17 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
 					"ASNs Status, enter ASNs Status Not displayed InTransit", 
 					StepResult.FAIL);
        	}	
-		wh.clickElement(chckBoxASNs);
-		wh.clickElement(btnView);		
+		
+		expectedResult = wh.isElementPresent(chckBoxASNs);
+        if (expectedResult) {
+            wh.clickElement(chckBoxASNs);
+        }
+		
+		
+		expectedResult = wh.isElementPresent(btnView);
+        if (expectedResult) {
+            wh.clickElement(btnView);
+        }
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(eleASNClosed);
 		ASNclosed=wh.getText(eleASNClosed);		
@@ -71,11 +90,18 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
 	
 	public  void DF_ASN_Verification() throws Exception{
 		wh.waitForPageLoaded();
-		wh.waitForElementPresent(lnkMenu);
-		wh.clickElement(lnkMenu);	
+		wh.waitForElementPresent(lnkMenu);		
+		expectedResult = wh.isElementPresent(lnkMenu);
+        if (expectedResult) {
+            wh.clickElement(lnkMenu);
+        }			
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkASNs);
-		wh.clickElement(lnkASNs);	
+		expectedResult = wh.isElementPresent(lnkASNs);
+        if (expectedResult) {
+            wh.clickElement(lnkASNs);
+        }
+		
 		wh.waitForPageLoaded();
 		wh.sendKeys(inputASNs, ASNID);
 		wh.clickElement(btnApply);
@@ -104,23 +130,42 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
 					"ASNs Page, ReceiptVariance not displayed", 
 					StepResult.FAIL);
        	}		
-		wh.clickElement(chckBoxASNs);
-		wh.clickElement(btnMore);
+		
+		expectedResult = wh.isElementPresent(chckBoxASNs);
+        if (expectedResult) {
+            wh.clickElement(chckBoxASNs);
+        }
+		
+		expectedResult = wh.isElementPresent(btnMore);
+        if (expectedResult) {
+            wh.clickElement(btnMore);
+        }
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkVerifyASNShipment);
-		wh.clickElement(lnkVerifyASNShipment);
-		//Pending
+		expectedResult = wh.isElementPresent(lnkVerifyASNShipment);
+        if (expectedResult) {
+            wh.clickElement(lnkVerifyASNShipment);
+        }				
 	}
 	public  void DF_Close_ASN_Verification() throws Exception {		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkMenu);
-		wh.clickElement(lnkMenu);	
+		expectedResult = wh.isElementPresent(lnkMenu);
+        if (expectedResult) {
+            wh.clickElement(lnkMenu);
+        }		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkASNs);
-		wh.clickElement(lnkASNs);	
+		expectedResult = wh.isElementPresent(lnkASNs);
+        if (expectedResult) {
+            wh.clickElement(lnkASNs);
+        }		
 		wh.waitForPageLoaded();
 		wh.sendKeys(inputASNs, ASNID);
-		wh.clickElement(btnApply);
+		expectedResult = wh.isElementPresent(btnApply);
+        if (expectedResult) {
+            wh.clickElement(btnApply);
+        }		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(eleASNStatus);
 		ASNStatusIN=wh.getText(eleASNStatus);		
@@ -133,9 +178,15 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
        		report.addReportStep("ASNs Page, ASNs Status",
 					"ASNs Status, enter ASNs Status Not displayed InTransit", 
 					StepResult.FAIL);
-       	}	
-		wh.clickElement(chckBoxASNs);
-		wh.clickElement(btnView);		
+       	}			
+		expectedResult = wh.isElementPresent(chckBoxASNs);
+        if (expectedResult) {
+            wh.clickElement(chckBoxASNs);
+        }
+        expectedResult = wh.isElementPresent(btnView);
+        if (expectedResult) {
+            wh.clickElement(btnView);
+        }			
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(eleASNClosed);
 		ASNclosed=wh.getText(eleASNClosed);		
@@ -152,16 +203,26 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
 	}	
 	
 	public  void DF_iLPNs_Creation() throws Exception {	
-	    wh.waitForPageLoaded();
+	    wh.waitForPageLoaded();			
 		wh.waitForElementPresent(lnkMenu);
-		wh.clickElement(lnkMenu);	
+		expectedResult = wh.isElementPresent(lnkMenu);
+        if (expectedResult) {
+            wh.clickElement(lnkMenu);
+        }
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(lnkASNs);
-		wh.clickElement(lnkASNs);	
+		expectedResult = wh.isElementPresent(lnkASNs);
+        if (expectedResult) {
+            wh.clickElement(lnkASNs);
+        }			
 		wh.waitForPageLoaded();	
 		wh.waitForElementPresent(inputASNs);
 		wh.sendKeys(inputASNs, ASNID);
-		wh.clickElement(btnApply);
+		wh.waitForElementPresent(btnApply);
+		expectedResult = wh.isElementPresent(btnApply);
+        if (expectedResult) {
+            wh.clickElement(btnApply);
+        }		
 		wh.waitForPageLoaded();
 		wh.waitForElementPresent(eleASNStatus);
 		ASNStatusIN=wh.getText(eleASNStatus);		
@@ -175,13 +236,22 @@ public class DFAsnVerification extends PageBase<DFAppmntCreationASNShipment> {
 					"ASNs Status, enter ASNs Status Not displayed InTransit", 
 					StepResult.FAIL);
        	}	
-		    wh.clickElement(chckBoxASNs);
+		    
+		    expectedResult = wh.isElementPresent(chckBoxASNs);
+	        if (expectedResult) {
+	            wh.clickElement(chckBoxASNs);
+	        }
 		    wh.waitForPageLoaded();
 			wh.waitForElementPresent(lnkActions);
-			wh.clickElement(lnkActions);	
+			expectedResult = wh.isElementPresent(lnkActions);
+	        if (expectedResult) {
+	            wh.clickElement(lnkActions);
+	        }				
 			wh.waitForPageLoaded();
 			wh.waitForElementPresent(lnkCreateiLPNs);
-			wh.clickElement(lnkCreateiLPNs);	
-     
+			expectedResult = wh.isElementPresent(lnkCreateiLPNs);
+	        if (expectedResult) {
+	            wh.clickElement(lnkCreateiLPNs);
+	        }				     
 	}	
 }

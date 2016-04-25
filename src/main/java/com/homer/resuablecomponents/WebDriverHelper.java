@@ -1750,6 +1750,34 @@ public class WebDriverHelper {
 		return rNum;
 	}
 	
+	/**
+	 * Method to get the row number
+	 * 
+	 * @param element
+	 * @param elementBy
+	 * @throws Exception 
+	 */
+	
+	public void verifyItemNameRowsinPackingSystem(By elementBy,By inputoItmBarCode,String xpath) throws Exception{
+		int rNum=0; 
+		int blnNum=0;
+		 int rows=driver.findElements(elementBy).size();		  
+		  for(rNum=1;rNum<=rows;rNum++){
+		   System.out.println("Row is-> "+rNum);
+		   String GetItemname=driver.findElement(By.xpath(xpath+"["+rNum+"]/td[1]")).getText();
+		   String OrderQnty=driver.findElement(By.xpath(xpath+"["+rNum+"]/td[3]")).getText();
+		   int CountQnty = Integer.parseInt(OrderQnty);
+		    for(int cNum=1;cNum<=CountQnty;cNum++){		       			    	
+		    	driver.findElement(inputoItmBarCode).sendKeys(GetItemname);
+                waitForPageLoaded();
+                moveKeyBoardEnter();
+                waitForPageLoaded();
+		    }
+		}
+		  
+	}	
+	
+	
 	
 	/**
 	 * Method to get the row number
@@ -1779,7 +1807,34 @@ public class WebDriverHelper {
 		}
 		  return blnNum;
 	}	
-
+		
+	/**
+	 * Method to get the row number
+	 * 
+	 * @param element
+	 * @param elementBy
+	 * @throws Exception 
+	 */
 	
+	public void verifyItemNameRowsHospitalinPackingSystem(By elementBy,By inputoItmBarCode,String xpath,By elementBy1) throws Exception{
+		int rNum=0; 
+		int blnNum=0;
+		 int rows=driver.findElements(elementBy).size();		  
+		  for(rNum=1;rNum<=rows;rNum++){
+		   System.out.println("Row is-> "+rNum);
+		   String GetItemname=driver.findElement(By.xpath(xpath+"["+rNum+"]/td[1]")).getText();
+		   String OrderQnty=driver.findElement(By.xpath(xpath+"["+rNum+"]/td[3]")).getText();
+		   int CountQnty = Integer.parseInt(OrderQnty);
+		    for(int cNum=1;cNum<=CountQnty;cNum++){
+		    	waitForPageLoaded();
+		    	driver.findElement(inputoItmBarCode).sendKeys(GetItemname);
+                waitForPageLoaded();
+                moveKeyBoardEnter();
+                driver.findElement(elementBy1).click();
+                waitForPageLoaded();
+		    }
+		}
+		  
+	}
 	
 }

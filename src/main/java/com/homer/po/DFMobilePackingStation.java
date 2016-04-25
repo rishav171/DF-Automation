@@ -13,8 +13,7 @@ public class DFMobilePackingStation   extends PageBase <DFMobilePackingStation> 
     static final By inputDistributionOrderID = By.id("dataForm:DOList_entityListView:DistributionOrderlist1:field6value1");
 
     static final By btnApply = By.id("dataForm:DOList_entityListView:DistributionOrderlist1:DistributionOrderlist1apply");
-    static final By chckBoxDistOrder = By.id("checkAll_c0_dataForm:DOList_entityListView:DOList_MainListTable");
-    
+    static final By chckBoxDistOrder = By.id("checkAll_c0_dataForm:DOList_entityListView:DOList_MainListTable");    
     static final By lnkSinglePackStation = By.linkText("SINGLES Packing Station");
     static final By inputPackStatnNbr = By.id("dataForm:PutPack_INP_PackStatnNbr_input");
     static final By btnsubmitButton = By.id("dataForm:submitButton");
@@ -23,26 +22,20 @@ public class DFMobilePackingStation   extends PageBase <DFMobilePackingStation> 
     static final By btnShortTote = By.id("dataForm:submitButtonShortTote1");
     static final By btnView = By.id("dataForm:DO_List_View_button");
     static final By lnkLPNs = By.id("DODetailsMainHeader_LPNs_lnk");
-    static final By btnShippingLabel = By.id("dataForm:PutWallPackStation_PrintShippingLabel_button");
-    
+    static final By btnShippingLabel = By.id("dataForm:PutWallPackStation_PrintShippingLabel_button");    
     static final By lnkMobilePackStation = By.linkText("MOBILE Packing Station");
     static final By inputoLPNNbr = By.id("dataForm:PutPack_INP_oLPNNbr");    
-    static final By inputoItmBarCode = By.id("dataForm:PutWallPackStation_Input_VerifyItemBarcode");
-    
+    static final By inputoItmBarCode = By.id("dataForm:PutWallPackStation_Input_VerifyItemBarcode");    
     static final By lnkMULTISPackingStation = By.linkText("MULTIS Packing Station (Supervisor)");
     static final By chckBoxSec02 = By.id("dataForm:PutPack_ChckBox_Sec02");
-    static final By inputoLPNNbr1 = By.id("dataForm:PutPack_INP_oLPNNbr1");
-    
-    
-    
-    
+    static final By inputoLPNNbr1 = By.id("dataForm:PutPack_INP_oLPNNbr1");    
     static final By webtableMobilePackingStation = By.xpath("//table[@id='dataForm:dataTable_body']/tbody/tr");
     static final By webtableDistOrder = By.xpath("//table[@id='dataForm:DODetailsLpnList_lv:LPNListTable_body']/tbody/tr");
 
 	
 	public DFMobilePackingStation(InstanceContainer ic) {
 		super(ic);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -50,8 +43,10 @@ public class DFMobilePackingStation   extends PageBase <DFMobilePackingStation> 
 	 * @return
 	 * @throws Exception
 	 */
-	public void MobilePacking_Station(String PackStationNum,String[] iLPNs,String ItemNbr, String DistrOrder,String LPNFacility_Status,int OrderQnty) throws Throwable {
-        wh.waitForPageLoaded();
+	
+	
+	public void Clicks_on_MpbilePackingStation_Link(String PackStationNum) throws Throwable {	        
+		wh.waitForPageLoaded();
         wh.waitForElementPresent(lnkMenuOption);
         expectedResult = wh.isElementPresent(lnkMenuOption);
         if (expectedResult) {
@@ -74,37 +69,31 @@ public class DFMobilePackingStation   extends PageBase <DFMobilePackingStation> 
         expectedResult = wh.isElementPresent(btnsubmitButton);
         if (expectedResult) {
             wh.clickElement(btnsubmitButton);
-        }
-        for(int iLpnitr=1;iLpnitr<=OrderQnty;iLpnitr++){
+        }        
+ }
+
+	
+		
+	public void MobilePacking_Station(String[] iLPNs) throws Throwable {        
+        for(int iLpnitr=0;iLpnitr<=iLPNs.length-1;iLpnitr++){
         wh.waitForPageLoaded();
         expectedResult = wh.isElementPresent(inputoLPNNbr);
         if (expectedResult) {
            wh.sendKeys(inputoLPNNbr, iLPNs[iLpnitr]);
             wh.waitForPageLoaded();
             wh.moveKeyBoardEnter();
-        }
-        
+        }        
         wh.waitForPageLoaded();
         expectedResult = wh.isElementPresent(inputoItmBarCode);
         if (expectedResult) {
-        	for(int mblItr=1;mblItr<=OrderQnty;mblItr++){
-            wh.sendKeys(inputoItmBarCode, ItemNbr);
-            wh.waitForPageLoaded();
-            wh.moveKeyBoardEnter();
-            wh.waitForPageLoaded();
-        	}
-        }
-        
+        	wh.verifyItemNameRowsinPackingSystem(webtableMobilePackingStation,inputoItmBarCode,"//table[@id='dataForm:dataTable_body']/tbody/tr");
+        }        
         wh.waitForPageLoaded();
         expectedResult = wh.isElementPresent(btnShippingLabel);
         if (expectedResult) {
             wh.clickElement(btnShippingLabel);
             wh.waitForPageLoaded();
         }
-      }
-    
-               
-    }
-    
-
+      }                   
+    }    
 }
